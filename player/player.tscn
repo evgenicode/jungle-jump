@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://bn5rws78wmylg"]
+
+[ext_resource type="Texture2D" uid="uid://tbggiv1odkpy" path="res://assets/player_sheet.png" id="1_jjxlr"]
+
+[sub_resource type="Animation" id="Animation_7r0mi"]
+resource_name = "idle"
+length = 0.4
+loop_mode = 1
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cgw4a"]
+_data = {
+"idle": SubResource("Animation_7r0mi")
+}
+
+[node name="Player" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 13
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -16)
+texture = ExtResource("1_jjxlr")
+hframes = 19
+frame = 7
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_cgw4a")
+}
