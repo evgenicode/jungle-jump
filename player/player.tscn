@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bn5rws78wmylg"]
+[gd_scene load_steps=10 format=3 uid="uid://bn5rws78wmylg"]
 
 [ext_resource type="Texture2D" uid="uid://tbggiv1odkpy" path="res://assets/player_sheet.png" id="1_jjxlr"]
 
@@ -112,6 +112,9 @@ _data = {
 "run": SubResource("Animation_21sbo")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h3h7v"]
+size = Vector2(12, 22)
+
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 13
@@ -127,3 +130,10 @@ frame = 10
 libraries = {
 "": SubResource("AnimationLibrary_cgw4a")
 }
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -11)
+shape = SubResource("RectangleShape2D_h3h7v")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2.5, 2.5)
