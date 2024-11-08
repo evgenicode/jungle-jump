@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://ylqy6crgd47r"]
+[gd_scene load_steps=7 format=3 uid="uid://ylqy6crgd47r"]
 
+[ext_resource type="Script" path="res://items/item.gd" id="1_1c6b7"]
 [ext_resource type="Texture2D" uid="uid://7k3ws7spnuko" path="res://assets/sprites/cherry.png" id="1_kcvrd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_r7v5g"]
@@ -46,6 +47,7 @@ _data = {
 [node name="Item" type="Area2D"]
 collision_layer = 8
 collision_mask = 2
+script = ExtResource("1_1c6b7")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_kcvrd")
@@ -60,3 +62,5 @@ libraries = {
 "": SubResource("AnimationLibrary_kfpsk")
 }
 autoplay = "default_animation"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
