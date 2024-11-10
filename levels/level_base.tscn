@@ -1,7 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://bupbow38qtoyj"]
+[gd_scene load_steps=11 format=3 uid="uid://bupbow38qtoyj"]
 
+[ext_resource type="Script" path="res://levels/level_base.gd" id="1_6qr75"]
 [ext_resource type="Texture2D" uid="uid://cj6adik2smlbm" path="res://assets/environment/tileset.png" id="1_7vw6n"]
 [ext_resource type="Texture2D" uid="uid://dchf6wlqmpngw" path="res://assets/environment/props.png" id="2_oiops"]
+[ext_resource type="TileSet" uid="uid://dhxw3f8l2saqn" path="res://assets/tilesets/tiles_world.tres" id="4_k1sk0"]
+[ext_resource type="TileSet" uid="uid://dn505hopwb4de" path="res://assets/tilesets/tiles_items.tres" id="5_kp1rg"]
+[ext_resource type="TileSet" uid="uid://blhd0ogpuydej" path="res://assets/tilesets/tiles_spikes.tres" id="6_vj6jl"]
+[ext_resource type="PackedScene" uid="uid://bn5rws78wmylg" path="res://player/player.tscn" id="7_yfrkv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6qgku"]
 texture = ExtResource("1_7vw6n")
@@ -985,8 +990,25 @@ sources/0 = SubResource("TileSetAtlasSource_6qgku")
 sources/1 = SubResource("TileSetAtlasSource_cwybm")
 
 [node name="LevelBase" type="Node2D"]
+script = ExtResource("1_6qr75")
 
-[node name="TileMap" type="TileMap" parent="."]
+[node name="TileMapCustom" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_3h0ci")
 format = 2
 layer_0/tile_data = PackedInt32Array(327680, 65536, 1, 327681, 65536, 1, 327682, 65536, 1, 327683, 65536, 1, 327684, 65536, 1, 327685, 65536, 1, 327686, 65536, 1, 327687, 65536, 1, 327688, 65536, 1)
+
+[node name="World" type="TileMap" parent="."]
+tile_set = ExtResource("4_k1sk0")
+format = 2
+
+[node name="Items" type="TileMap" parent="."]
+tile_set = ExtResource("5_kp1rg")
+format = 2
+
+[node name="Danger" type="TileMap" parent="."]
+tile_set = ExtResource("6_vj6jl")
+format = 2
+
+[node name="Player" parent="." instance=ExtResource("7_yfrkv")]
+
+[node name="SpawnPoint" type="Marker2D" parent="."]
