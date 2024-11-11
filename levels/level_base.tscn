@@ -41,7 +41,7 @@ texture = ExtResource("1_7vw6n")
 13:1/0 = 0
 13:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 13:1/0/physics_layer_0/angular_velocity = 0.0
-13:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(0.625, 3.5, 8, 0.375, 8, 8, -8, 8)
+13:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, 0.375, 8, 8, -8, 8)
 14:1/0 = 0
 14:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 14:1/0/physics_layer_0/angular_velocity = 0.0
@@ -53,7 +53,7 @@ texture = ExtResource("1_7vw6n")
 17:1/0 = 0
 17:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 17:1/0/physics_layer_0/angular_velocity = 0.0
-17:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-0.625, 3.5, -8, 0.375, -8, 8, 8, 8)
+17:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 0.375, -8, 8, 8, 8)
 19:1/0 = 0
 19:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 19:1/0/physics_layer_0/angular_velocity = 0.0
@@ -995,7 +995,6 @@ script = ExtResource("1_6qr75")
 [node name="TileMapCustom" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_3h0ci")
 format = 2
-layer_0/tile_data = PackedInt32Array(327680, 65536, 1, 327681, 65536, 1, 327682, 65536, 1, 327683, 65536, 1, 327684, 65536, 1, 327685, 65536, 1, 327686, 65536, 1, 327687, 65536, 1, 327688, 65536, 1)
 
 [node name="World" type="TileMap" parent="."]
 tile_set = ExtResource("4_k1sk0")
