@@ -1,5 +1,10 @@
 extends Node2D
 
+signal score_changed
+
+var item_scene = load("res://items/item.tscn")
+var score = 0: set = set_score
+
 func _ready():
 	$Items.hide()
 	$Player.reset($SpawnPoint.position)
@@ -10,3 +15,20 @@ func set_camera_limits():
 	var cell_size = $World.tile_set.tile_size
 	$Player/Camera2D.limit_left = (map_size.position.x - 5) * cell_size.x
 	$Player/Camera2D.limit_right = (map_size.end.x + 5) * cell_size.x
+
+func set_score(value):
+	score = value
+	score_changed.emit(score)
+
+func spawn_items():
+	var item_cells = $Time.get_used_cells(0)
+	for cell in item_cells:
+		var data = $Item.get_cell_tile_data(0, cell)
+		var type = data.get_custom_data("type")
+		var item = item_scene.instantiate()
+		add_child(item)
+		item.init(type, $Items.map_to_local(cell))
+		item.picked_up.connect(self._on_item_picked_up)
+		
+func on_item_picked_up():
+	score += 1
