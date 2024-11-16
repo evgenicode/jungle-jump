@@ -12,3 +12,6 @@ layer_0/tile_data = PackedInt32Array(851983, 1, 0, 851986, 1, 0, 851989, 1, 0, 8
 
 [node name="SpawnPoint" parent="." index="5"]
 position = Vector2(-160, 70)
+
+[node name="TileMap" type="TileMap" parent="." index="6"]
+format = 2
